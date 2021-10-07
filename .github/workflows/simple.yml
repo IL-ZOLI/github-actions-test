@@ -22,7 +22,7 @@ jobs:
       - name: sqlfluff     
         run: sqlfluff lint models
       - name: dbt run
-        run: dbt run --profiles-dir ./profiles --profile fission-slimci
+        run: dbt run --profiles-dir . --profile fission-slimci
         env:
           DBT_DB_TYPE:    snowflake
           DBT_DB_ACCOUNT: ${{  secrets.DBT_DB_ACCOUNT }}
