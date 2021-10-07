@@ -4,4 +4,3 @@ select
     customer.is_active,
     customer.created_at 
 from customer
-tomer

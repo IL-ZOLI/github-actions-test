@@ -3,7 +3,7 @@ name: slimci-sqlfluff
 on: [pull_request]
 
 jobs:
-  upload-artifact:
+  dbt-test:
     runs-on: ubuntu-latest
     # Map a step output to a job output
     steps:
@@ -19,12 +19,10 @@ jobs:
           pip install dbt==0.20.2
           pip install sqlfluff
           pip install sqlfluff[dbt]
-      # - name: create profile.yml
-      #   run: python ./python/create_profile.py
       - name: sqlfluff     
         run: sqlfluff lint models
-      - name: dbt docs
-        run: dbt docs generate --profiles-dir ./profiles --profile fission-slimci
+      - name: dbt run
+        run: dbt run --profiles-dir ./profiles --profile fission-slimci
         env:
           DBT_DB_TYPE:    snowflake
           DBT_DB_ACCOUNT: ${{  secrets.DBT_DB_ACCOUNT }}
