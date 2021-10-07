@@ -1,14 +1,38 @@
-name: Shell Commands
-
-on: push
-
+# Convert dbt docs output to an excel file
+name: slimci-sqlfluff
+on: 
+  pull_request:
+    branches: [main]
 jobs:
-  run-shell-command:
+  upload-artifact:
     runs-on: ubuntu-latest
+    # Map a step output to a job output
     steps:
-      - name: echo a string
-        run: echo "Hello World"
-      - name: multiline script
+        # Make sure we have some code to diff.
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9.1'
+      - name: install-requirements
         run: |
-          node -v
-          npm -v
+          # pip install -r ./python/requirements.txt
+          pip install dbt==0.20.2
+          pip install sqlfluff
+          pip install sqlfluff[dbt]
+      # - name: create profile.yml
+      #   run: python ./python/create_profile.py
+      - name: sqlfluff     
+        run: sqlfluff lint models
+      - name: dbt docs
+        run: dbt docs generate --profiles-dir ./profiles --profile fission-slimci
+        env:
+          DBT_DB_TYPE:    snowflake
+          DBT_DB_ACCOUNT: ${{  secrets.DBT_DB_ACCOUNT }}
+        # User/password auth
+          DBT_PWD:        ${{  secrets.DBT_PWD }} 
+          DBT_USER:       ${{  secrets.DBT_USER }} 
+          DBT_ROLE:       ${{  secrets.DBT_ROLE }} 
+          DBT_DB:         ${{  secrets.DBT_DB }} 
+          DBT_WH:         ${{  secrets.DBT_WH }} 
+          DBT_DB_SCHEMA:  ${{  secrets.DBT_DB_SCHEMA }}
