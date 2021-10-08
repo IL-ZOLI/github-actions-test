@@ -24,9 +24,9 @@ jobs:
       - name: dbt run
         run: dbt run --profiles-dir . --profile fission-slimci
         env:
+          DBT_TARGET: ${{  secrets.DBT_TARGET }}
           DBT_DB_TYPE:    snowflake
           DBT_DB_ACCOUNT: ${{  secrets.DBT_DB_ACCOUNT }}
-        # User/password auth
           DBT_PWD:        ${{  secrets.DBT_PWD }} 
           DBT_USER:       ${{  secrets.DBT_USER }} 
           DBT_ROLE:       ${{  secrets.DBT_ROLE }} 
