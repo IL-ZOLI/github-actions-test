@@ -20,7 +20,7 @@ jobs:
           pip install sqlfluff
           pip install sqlfluff[dbt]
       - name: sqlfluff     
-        run: sqlfluff lint models
+        run: sqlfluff lint models --nofail
       - name: dbt run
         run: dbt run --profiles-dir ./profiles --profile fission-slimci
         env:
