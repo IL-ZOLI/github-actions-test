@@ -707,3 +707,94 @@ https://docs.getdbt.com/v0.15/docs/seeds#section-specify-column-quoting
 Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 2021-10-13 11:38:45.475710 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11212dc70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112a547c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112a54640>]}
 2021-10-13 11:38:45.476026 (MainThread): Flushing usage events
+2021-10-13 12:08:52.247552 (MainThread): Running with dbt=0.21.0
+2021-10-13 12:08:53.723379 (MainThread): running dbt with arguments Namespace(record_timing_info=None, debug=False, log_format='default', write_json=True, use_colors=None, strict=False, warn_error=False, partial_parse=None, single_threaded=False, test_new_parser=False, use_experimental_parser=False, project_dir=None, profiles_dir='/Users/zoltancsonka/.dbt', profile=None, target=None, vars='{}', log_cache_events=False, use_cache=True, fail_fast=False, threads=None, version_check=True, select=['state:modified+'], exclude=None, selector_name=None, state=PosixPath('path/to/prod/artifacts'), defer=True, full_refresh=False, cls=<class 'dbt.task.run.RunTask'>, which='run', rpc_method='run')
+2021-10-13 12:08:53.738845 (MainThread): Tracking: tracking
+2021-10-13 12:08:53.739573 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064a70d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10347e7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106496fd0>]}
+2021-10-13 12:08:53.765858 (MainThread): Partial parsing not enabled
+2021-10-13 12:08:53.799310 (MainThread): Parsing macros/catalog.sql
+2021-10-13 12:08:53.801958 (MainThread): Parsing macros/adapters.sql
+2021-10-13 12:08:53.843230 (MainThread): Parsing macros/materializations/merge.sql
+2021-10-13 12:08:53.847369 (MainThread): Parsing macros/materializations/seed.sql
+2021-10-13 12:08:53.852386 (MainThread): Parsing macros/materializations/view.sql
+2021-10-13 12:08:53.853822 (MainThread): Parsing macros/materializations/table.sql
+2021-10-13 12:08:53.856946 (MainThread): Parsing macros/materializations/incremental.sql
+2021-10-13 12:08:53.865324 (MainThread): Parsing macros/core.sql
+2021-10-13 12:08:53.868865 (MainThread): Parsing macros/materializations/test.sql
+2021-10-13 12:08:53.875325 (MainThread): Parsing macros/materializations/helpers.sql
+2021-10-13 12:08:53.884669 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-10-13 12:08:53.886274 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-10-13 12:08:53.902964 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-10-13 12:08:53.933831 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-10-13 12:08:53.956482 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-10-13 12:08:53.958197 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-10-13 12:08:53.968048 (MainThread): Parsing macros/materializations/incremental/on_schema_change.sql
+2021-10-13 12:08:53.987507 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-10-13 12:08:54.001184 (MainThread): Parsing macros/materializations/table/table.sql
+2021-10-13 12:08:54.008710 (MainThread): Parsing macros/materializations/view/view.sql
+2021-10-13 12:08:54.015932 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-10-13 12:08:54.019701 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-10-13 12:08:54.021156 (MainThread): Parsing macros/etc/query.sql
+2021-10-13 12:08:54.022106 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-10-13 12:08:54.023583 (MainThread): Parsing macros/etc/datetime.sql
+2021-10-13 12:08:54.031827 (MainThread): Parsing macros/etc/where_subquery.sql
+2021-10-13 12:08:54.033580 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-10-13 12:08:54.036106 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-10-13 12:08:54.037657 (MainThread): Parsing macros/adapters/common.sql
+2021-10-13 12:08:54.090666 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-10-13 12:08:54.092250 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-10-13 12:08:54.093381 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-10-13 12:08:54.094658 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-10-13 12:08:54.280529 (MainThread): Acquiring new snowflake connection "model.sqlfluff.my_first_dbt_model".
+2021-10-13 12:08:54.377465 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '51fc1dc6-c067-472b-84f1-ce9057aac4fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106490d90>]}
+2021-10-13 12:08:54.432364 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2021-10-13 12:08:54.433029 (MainThread): Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '51fc1dc6-c067-472b-84f1-ce9057aac4fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106502790>]}
+2021-10-13 12:08:54.433359 (MainThread): Found 1 model, 0 tests, 0 snapshots, 0 analyses, 172 macros, 0 operations, 1 seed file, 0 sources, 0 exposures
+2021-10-13 12:08:54.433888 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064eb580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064eb850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064eb250>]}
+2021-10-13 12:08:54.434158 (MainThread): Flushing usage events
+2021-10-13 12:08:54.936336 (MainThread): Connection 'model.sqlfluff.my_first_dbt_model' was properly closed.
+2021-10-13 12:08:54.936775 (MainThread): Encountered an error:
+2021-10-13 12:08:54.937120 (MainThread): Runtime Error
+  Got a state selector method, but no comparison manifest
+2021-10-13 12:08:54.951015 (MainThread): Traceback (most recent call last):
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/main.py", line 127, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/main.py", line 205, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/main.py", line 258, in run_from_args
+    results = task.run()
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/task/runnable.py", line 433, in run
+    self._runtime_initialize()
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/task/runnable.py", line 155, in _runtime_initialize
+    self.job_queue = self.get_graph_queue()
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/task/runnable.py", line 146, in get_graph_queue
+    return selector.get_graph_queue(spec)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 297, in get_graph_queue
+    selected_nodes = self.get_selected(spec)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 278, in get_selected
+    selected_nodes, indirect_only = self.select_nodes(spec)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 178, in select_nodes
+    direct_nodes, indirect_nodes = self.select_nodes_recursively(spec)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 149, in select_nodes_recursively
+    bundles = [
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 150, in <listcomp>
+    self.select_nodes_recursively(component)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 149, in select_nodes_recursively
+    bundles = [
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 150, in <listcomp>
+    self.select_nodes_recursively(component)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 149, in select_nodes_recursively
+    bundles = [
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 150, in <listcomp>
+    self.select_nodes_recursively(component)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 147, in select_nodes_recursively
+    direct_nodes, indirect_nodes = self.get_nodes_from_criteria(spec)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 104, in get_nodes_from_criteria
+    collected = self.select_included(nodes, spec)
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector.py", line 89, in select_included
+    return set(method.search(included_nodes, spec.value))
+  File "/Users/zoltancsonka/.pyenv/versions/sqlfluff/lib/python3.9/site-packages/dbt/graph/selector_methods.py", line 480, in search
+    raise RuntimeException(
+dbt.exceptions.RuntimeException: Runtime Error
+  Got a state selector method, but no comparison manifest
+
