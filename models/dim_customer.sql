@@ -3,4 +3,5 @@ select
     customer.customer_name,
     customer.is_active,
     customer.created_at
+
 from customer
