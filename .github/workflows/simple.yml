@@ -25,10 +25,13 @@ jobs:
       - name: sqlfluff     
         run: sqlfluff lint models --nofail
 
+      - name: seed
+        run: dbt seed
+
       - name: dbt run
         run: dbt run --profiles-dir . --profile fission
         env:
-          DBT_TARGET:     ${{  secrets.DBT_TARGET }} 
+          DBT_TARGET:     ${{  secrets.DBT_TARGET }}
           DBT_DB_TYPE:    snowflake
           DBT_DB_ACCOUNT: ${{  secrets.DBT_DB_ACCOUNT }}
         # User/password auth - replace with keypair
