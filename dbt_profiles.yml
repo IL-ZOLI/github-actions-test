@@ -1,4 +1,4 @@
-fission-slimci:
+fission:
   target: "{{ env_var('DBT_TARGET') }}"
   outputs:
     dev:
