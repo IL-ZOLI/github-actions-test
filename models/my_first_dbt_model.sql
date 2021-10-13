@@ -17,7 +17,9 @@ with source_data as (
 
 )
 
-select *
+select 
+    id,
+    'test' test_column
 from source_data
 
 /*
