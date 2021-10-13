@@ -26,7 +26,7 @@ jobs:
         run: sqlfluff lint models --nofail
 
       - name: dbt run
-        run: dbt run --profiles-dir ./profiles --profile fission
+        run: dbt run --profiles-dir . --profile fission
         env:
           DBT_DB_TYPE:    snowflake
           DBT_DB_ACCOUNT: ${{  secrets.DBT_DB_ACCOUNT }}
